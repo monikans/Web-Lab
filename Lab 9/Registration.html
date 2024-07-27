@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Registration Page</title>
+ <style>
+ input, button {
+ width: 50%;
+ padding: 10px;
+ margin: 10px 0;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ font-size: 16px;
+ }
+ button {
+ background-color: lightgreen;
+ cursor: pointer;
+ }
+ button:hover {
+ background-color: #45a049;
+ }
+ .form-container {
+ width: 300px;
+ margin: auto;
+ background: #f0f0f0;
+ padding: 20px;
+ border-radius: 8px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ text-align: center;
+ }
+ h1 {
+ font-size: 24px;
+ }
+ </style>
+</head>
+<body>
+ <div class="form-container">
+ <h1>Registration Form</h1>
+ <input type="text" id="userId" placeholder="User ID" /><br /><br />
+ <input type="text" id="name" placeholder="Name" /><br /><br />
+ <input type="password" id="password" placeholder="Password" /><br /><br />
+ <input type="email" id="email" placeholder="E-mail" /><br /><br />
+ <button onclick="validateForm()">Register</button>
+ </div>
+ <script>
+ function validateForm() {
+ const userId = document.getElementById('userId').value.trim();
+ const name = document.getElementById('name').value.trim();
+ const password = document.getElementById('password').value.trim();
+ const email = document.getElementById('email').value.trim();
+ if (!validateUserId(userId)) {
+ alert("User ID must be between 5 and 12 characters.");
+ return;
+ }
+ if (!validateName(name)) {
+ alert("Name must contain only alphabets and be at least 15 characters 
+long.");
+ return;
+ }
+ if (!validatePassword(password)) {
+ alert("Password must be at least 8 characters long, include one uppercase 
+letter, one special character, and alphanumeric characters.");
+ return;
+ }
+ if (!validateEmail(email)) {
+ alert("Please enter a valid email address.");
+ return;
+ }
+ alert(`Registration Successful!\nUser ID: ${userId}\nName: ${name}\nEmail: 
+${email}`);
+ }
+ function validateUserId(userId) {
+ return userId.length >= 5 && userId.length <= 12;
+ }
+ function validateName(name) {
+ const re = /^[a-zA-Z\s]{15,}$/;
+ return re.test(name);
+ }
+ function validatePassword(password) {
+ const re = /^(?=.*[A-Z])(?=.*[a-zA-Z0-9])(?=.*[!@#$%^&*])[A-Za-z0-
+9!@#$%^&*]{8,}$/;
+ return re.test(password);
+ }
+ function validateEmail(email) {
+ const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+ return re.test(email);
+ }
+ </script>
+</body>
+</html>
