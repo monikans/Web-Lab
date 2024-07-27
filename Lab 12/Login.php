@@ -1,3 +1,7 @@
+<!--[NOTE: before executing php file create a text file named login.txt]
+  Execution process: 1st open Php file in browser and type Username and Password in the Input Box that should be same as in the text file And then click submit.
+result is:  alert message will be displayed as correct
+-->
 <!DOCTYPE html>
 <html>
 <head>
