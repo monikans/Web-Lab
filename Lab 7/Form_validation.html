@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Form Validation</title>
+ <style>
+ input, button {
+ width: 50%;
+ padding: 10px;
+ margin: 10px 0;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ font-size: 16px;
+ }
+ button {
+ background-color: lightgreen;
+ cursor: pointer;
+ }
+ button:hover {
+ background-color: #45a049;
+ }
+ .form-container {
+ width: 300px;
+ margin: auto;
+ background: #f0f0f0;
+ padding: 20px;
+ border-radius: 8px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ text-align: center;
+ }
+ h1 {
+ font-size: 24px;
+ }
+ </style>
+</head>
+<body>
+ <div class="form-container">
+ <h1>Personal Information</h1>
+ <input type="text" id="name" placeholder="Name"><br><br>
+ <input type="email" id="email" placeholder="Email"><br><br>
+ <input type="text" id="mobile" placeholder="Mobile No"><br><br>
+ <select id="gender">
+ <option value="">Select Gender</option>
+ <option value="Male">Male</option>
+ <option value="Female">Female</option>
+ <option value="Other">Other</option>
+ </select><br><br>
+ <input type="color" id="favoriteColor" title="Favorite Color"><br><br>
+ <button onclick="validateAndDisplay()">Submit</button><br><br>
+ <textarea id="result" rows="4" readonly></textarea><br><br>
+ </div>
+ <script>
+ function validateAndDisplay() {
+ const name = document.getElementById('name').value.trim();
+ const email = document.getElementById('email').value.trim();
+ const mobile = document.getElementById('mobile').value.trim();
+ const gender = document.getElementById('gender').value;
+ const favoriteColor = document.getElementById('favoriteColor').value;
+ if (!name) {
+ alert("Name is required");
+ return;
+ }
+ if (!email || !validateEmail(email)) {
+ alert("Valid email is required");
+return;
+ }
+ if (!mobile || !validateMobile(mobile)) {
+ alert("Valid mobile number is required");
+return;
+ }
+ if (!gender) {
+ alert("Gender is required");
+return;
+ }
+ const result = `Name: ${name}\n
+ Email: ${email}\n
+Mobile No: ${mobile}\n
+Gender: ${gender}\n
+Favorite Color: ${favoriteColor}`;
+ document.getElementById('result').value = result;
+ }
+ function validateEmail(email) {
+ const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+ return re.test(String(email).toLowerCase());
+ }
+ function validateMobile(mobile) {
+ const re = /^[0-9]{10}$/;
+ return re.test(String(mobile));
+ }
+ </script>
+</body>
+</html>
