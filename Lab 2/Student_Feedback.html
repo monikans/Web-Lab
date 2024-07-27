@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>FeedBack</title>
+ <style>
+ input,
+ button {
+ width: 50%;
+ padding: 10px;
+ margin: 10px 0;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ font-size: 16px;
+ }
+ button {
+ background-color: lightgreen;
+ cursor: pointer;
+ }
+ button:hover {
+ background-color: #45a049;
+ }
+ .form-container {
+ width: 300px;
+ margin: auto;
+ background: #f0f0f0;
+ padding: 20px;
+ border-radius: 8px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ text-align: center;
+ }
+ h1 {
+ font-size: 24px;
+ }
+ </style>
+</head>
+<body>
+ <h1>Feedback Form</h1>
+ <form class="form-container">
+ <input type="text" name="fname" placeholder="Enter your name" 
+class="rad"><br>
+ <input type="text" name="femail" placeholder="Enter your mail id" 
+class="rad"><br>
+ <input type="text" name="usn" placeholder="Enter your usn" class="rad"><br>
+ <label for="semester">Sem:</label>
+ <select name="semester" id="">
+ <option value="1" selected>1</option>
+ <option value="2">2</option>
+ <option value="3">3</option>
+ <option value="4">4</option>
+ <option value="5">5</option>
+ <option value="6">6</option>
+ <option value="7">7</option>
+ <option value="8">8</option>
+ </select><br><br>
+ Branch: <br>
+ <input type="radio" class="rad" name="branch" value="CS">CS</input><br>
+ <input type="radio" class="rad" name="branch" value="IS">IS</input><br>
+ <input type="radio" class="rad" name="branch" value="ECE">ECE</input><br>
+ <br>
+ <input type="checkbox" name="send" checked>Send copy of feedback to 
+mail</input><br><br>
+ <textarea name="feedback" rows="5" cols="30" 
+placeholder="Feedback....."></textarea><br>
+ <button type="submit">Submit</button>
+ <button type="reset">Reset</button>
+ </form>
+</body>
+</html>
