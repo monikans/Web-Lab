@@ -1,4 +1,3 @@
-<!-- use php extension for this program (eg: 10b.php) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
