@@ -1,8 +1,8 @@
-                           20CS68L-Web Technology Lab
+##20CS68L-Web Technology Lab
 
 List of Programs for the conduction of laboratory final CIE and Semester End Examination with guidelines as follow:
 
-                                  ##PROGRAMMES
+##PROGRAMMES
 
 1. Design web a page for the department timetable containing a suitable header, footer, 
    description of the course codes and titles, faculty name and initialises, etc., use href, 
