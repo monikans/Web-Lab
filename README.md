@@ -48,9 +48,10 @@ III. Password (must be eight characters including one uppercase letter, one spec
 IV. E-mail (should not contain invalid addresses)
 
 10. a. Write a PHP script to display today's date in dd-mm-yyyy format.
+
     b. Write a PHP script to check whether the number is prime or not when user input a valid 
        number from client side.
 
-11. Create HTML page that contain textbox, submit/reset button. Write PHP script to display this information and also store into a text file.
+12. Create HTML page that contain textbox, submit/reset button. Write PHP script to display this information and also store into a text file.
 
-12. Write a PHP script for login authentication. Design an HTML form which takes Username and Password from user and validate against stored Username and Password in a file.
+13. Write a PHP script for login authentication. Design an HTML form which takes Username and Password from user and validate against stored Username and Password in a file.
