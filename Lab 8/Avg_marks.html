@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Average Marks Calculator</title>
+ <style>
+ input, button {
+ width: 50%;
+ padding: 10px;
+ margin: 10px 0;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ font-size: 16px;
+ }
+ button {
+ background-color: lightgreen;
+ cursor: pointer;
+ }
+ button:hover {
+ background-color: #45a049;
+ }
+ .form-container {
+ width: 300px;
+ margin: auto;
+ background: #f0f0f0;
+ padding: 20px;
+ border-radius: 8px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ text-align: center;
+ }
+ h1 {
+ font-size: 24px;
+ }
+ </style>
+</head>
+<body>
+ <div class="form-container">
+ <h1>Enter Test Marks</h1>
+ <input type="text" id="regNo" placeholder="Register Number"><br><br>
+ <input type="text" id="subCode" placeholder="Subject Code"><br><br>
+ <input type="number" id="test1" placeholder="Test 1 Marks"><br><br>
+ <input type="number" id="test2" placeholder="Test 2 Marks"><br><br>
+ <input type="number" id="test3" placeholder="Test 3 Marks"><br><br>
+ <button onclick="computeAverage()">Compute Average</button>
+ </div>
+ <script>
+ function computeAverage() {
+ const regNo = document.getElementById('regNo').value.trim();
+ const subCode = document.getElementById('subCode').value.trim();
+ const test1 = parseFloat(document.getElementById('test1').value);
+ const test2 = parseFloat(document.getElementById('test2').value);
+ const test3 = parseFloat(document.getElementById('test3').value);
+ if (!regNo) {
+ alert("Register Number is required");
+ return;
+ }
+ if (!subCode) {
+ alert("Subject Code is required");
+return;
+ }
+ if (isNaN(test1) || isNaN(test2) || isNaN(test3)) {
+ alert("All test marks are required and should be valid numbers");
+ return;
+ }
+ const marks = [test1, test2, test3];
+ marks.sort((a, b) => b - a);
+ const average = (marks[0] + marks[1]) / 2;
+ alert(`Average of the best two tests: ${average}`);
+ }
+ </script>
+</body>
+</html>
